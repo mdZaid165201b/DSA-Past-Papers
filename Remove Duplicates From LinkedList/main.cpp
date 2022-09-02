@@ -173,9 +173,10 @@ public:
         temp = head;
         while(temp != NULL)
         {
-            cout<<temp->getData()<<endl;
+            cout<<temp->getData()<<"->";
             temp = temp->getNext();
         }
+        cout<<"NULL"<<endl;
     }
 
     Node *getElementFromIndex(int index)
