@@ -209,38 +209,74 @@ public:
     }
 
     // 2015 Long Question that is removeDuplicatesFromLinkedList()
-    void removeDuplicates()
-    {
+    /*WRONG METHOD*/
+//     void removeDuplicates()
+//     {
+//         Node *temp = head;
+//         while(temp!=NULL)
+//         {
+//             Node *temp2 = temp->getNext();
+//             Node *prev;
+//             while(temp2!=NULL)
+//             {
+//                 if(temp->getData() == temp2->getData())
+//                 {
+//                     if(temp2->getNext() == NULL)
+//                     {
+//                         delete temp2;
+//                         temp2 = NULL;
+//                         prev->setNext(NULL);
+//                         continue;
+//                     }
+//                     else
+//                     {
+//                         prev->setNext(temp2->getNext());
+//                         Node *testNode = temp2;
+//                         prev = temp2;
+//                         delete testNode;
+//                     }
+//                 }
+//                 prev = temp2;
+//                 temp2 = temp2->getNext();
+//             }
+//             temp = temp->getNext();
+//         }
+//     }
+    void removeDuplicates(){
+        sort();
         Node *temp = head;
-        while(temp!=NULL)
-        {
-            Node *temp2 = temp->getNext();
-            Node *prev;
-            while(temp2!=NULL)
-            {
-                if(temp->getData() == temp2->getData())
-                {
-                    if(temp2->getNext() == NULL)
-                    {
-                        delete temp2;
+        Node *temp2 = temp->getNext();
+        while(temp!=NULL){
+            while(temp2!=NULL){
+                if(temp->getData() == temp2->getData()){
+                    Node *forDeleteNode = temp2;
+                    if(temp2->getNext() == NULL){
+                        // cout<<"forDeleteNode =>"<<forDeleteNode->getNext()<<endl;
+                        // cout<<"if part when temp2->getNext => NULL"<<endl;
+                        // cout<<"temp2->getData()"<<temp2->getData()<<endl;
+                        // cout<<"temp2->getNext()"<<temp2->getNext()<<endl;
+                        // cout<<"temp->getData()"<<temp->getData()<<endl;
+
+                        temp = NULL;
                         temp2 = NULL;
-                        prev->setNext(NULL);
+                        removeFromLast();
+                        break;
+                        
+                    }
+                    else{
+                        temp->setNext(temp2->getNext());
+                        temp2 = temp->getNext();
+                        delete forDeleteNode;
+                        forDeleteNode = NULL;
                         continue;
                     }
-                    else
-                    {
-                        prev->setNext(temp2->getNext());
-                        Node *testNode = temp2;
-                        prev = temp2;
-                        delete testNode;
-                    }
                 }
-                prev = temp2;
-                temp2 = temp2->getNext();
+                    temp = temp->getNext();
+                    temp2 = temp->getNext();
             }
-            temp = temp->getNext();
         }
     }
+    
 };
 
 int main()
