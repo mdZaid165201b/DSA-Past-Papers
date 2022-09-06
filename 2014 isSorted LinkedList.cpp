@@ -5,6 +5,6 @@
         Node* temp2;
         while(temp!=NULL){
             if(temp->getData()>temp->getNext()->getData()){ return false; }
-            else{ return true;}
         }
+        return true;
     }
