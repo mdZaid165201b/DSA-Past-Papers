@@ -3,8 +3,9 @@
     bool isSorted(){
         Node* temp = this->head;
         Node* temp2;
-        while(temp!=NULL){
+        while(temp->getNext()->getNext() != NULL){
             if(temp->getData()>temp->getNext()->getData()){ return false; }
+            temp = temp->getNext();
         }
         return true;
     }
