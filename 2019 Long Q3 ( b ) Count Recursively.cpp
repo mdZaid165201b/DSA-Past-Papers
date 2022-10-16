@@ -21,5 +21,5 @@ int main()
 {
      int arr[6] = {8,7,5,7,8,8,};
      cout<<count(arr,0,5,8);
-    return 0;
+     return 0;
 }
