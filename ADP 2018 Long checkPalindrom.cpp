@@ -6,18 +6,13 @@ using namespace std;
 
 bool checkPalidrom(string word){
     char chArr[word.length()];
-    char chArr2[word.length()];
+    
     for(int i = 0;i < word.length(); i++){
         chArr[i] = word[i];
     }
-    for(int i = word.length(); i >= 0; i--){
-        chArr2[i] = word[i];
-    }
     for(int i = 0; i < word.length(); i++){
-        if(chArr[i] != chArr2[word.length() - i]){
-            return false;
-        }
-    }
+        // cout<<"chArr :"<<chArr[i]<<" "<<"word :"<<word[word.length()-i];
+        if(chArr[i] != word[word.length() - 1 - i]){ return false; }
     
     return true;
 }
@@ -25,7 +20,7 @@ bool checkPalidrom(string word){
 
 int main()
 {
-    string word = "zaid";
+    string word = "abba";
     checkPalidrom(word) ? cout<<"Palindrom" : cout<<"Not Palindrom";
 
     return 0;
