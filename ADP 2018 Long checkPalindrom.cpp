@@ -2,6 +2,8 @@
 #include <iostream>
 #include <cstring>
 using namespace std;
+
+
 bool checkPalidrom(string word){
     char chArr[word.length()];
     char chArr2[word.length()];
