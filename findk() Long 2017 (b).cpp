@@ -26,6 +26,7 @@ int findk(int arr[], int size){
 int main()
 {
     int arr[14] = {9,13,16,18,19,23,28,-1,0,1,2,5,7,8};
-    cout<<findk(arr,15);
+    int size = sizeof(arr) / sizeof(arr[0]);
+    cout<<findk(arr,size);
     return 0;
 }
