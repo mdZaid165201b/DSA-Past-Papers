@@ -3,7 +3,6 @@
 #include <cstring>
 using namespace std;
 
-
 int findk(int arr[],int left, int right){
     int middle = (left + right) / 2;
     if(arr[left] > arr[left+1]){
