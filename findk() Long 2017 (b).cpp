@@ -1,11 +1,8 @@
-
 #include <iostream>
 #include <cstring>
 using namespace std;
 
-int findk(int arr[], int size){
-    return findk(arr,0,size);
-}
+
 
 int findk(int arr[],int left, int right){
     int middle = (left + right) / 2;
@@ -20,6 +17,10 @@ int findk(int arr[],int left, int right){
         
         return findk(arr,left,middle);
     }
+}
+
+int findk(int arr[], int size){
+    return findk(arr,0,size);
 }
 
 int main()
