@@ -3,7 +3,7 @@
 using namespace std;
 
 
-
+// using recursion
 int findk(int arr[],int left, int right){
     int middle = (left + right) / 2;
     if(arr[left] > arr[left+1]){
