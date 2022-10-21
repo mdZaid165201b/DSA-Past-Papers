@@ -19,7 +19,7 @@ int main()
     bool check1, check2 = false;
     for(int i = 0; i < count / 2 - 1; i++){
         if(str[i] == str[i + 1]){
-            if(int(str[i]) < int(str[count / 2])){
+            if(int(str[i]) < int(str[count / 2])){ // here I did typecasting but if I do not typecast these character compiler automatically compare the ascii of these characters....
                 check1 = true;
             }
             else{
