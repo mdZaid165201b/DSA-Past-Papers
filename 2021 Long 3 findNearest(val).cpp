@@ -8,7 +8,7 @@ int size(Node *root){
     }
 
 int findNearest(int val){
-        int count = size(root);
+        int count = size(root); // Size method is used to count number of nodes in BST
         int *arr = new int(count);
         utilFunc(root,arr,0);
     
