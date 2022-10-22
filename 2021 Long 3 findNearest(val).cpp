@@ -1,3 +1,12 @@
+int size(Node *root){
+        if(root == NULL){
+            return 0;
+        }
+        else{
+            return 1 + size(root->getLeft()) + size(root->getRight());
+        }
+    }
+
 int findNearest(int val){
         int count = size(root);
         int *arr = new int(count);
