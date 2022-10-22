@@ -27,7 +27,7 @@ int findNearest(int val){
     }
     int utilFunc(Node *root ,int arr[],int index){
         if(root == NULL){ return index; }
-        int in = utilFunc(root->getLeft(),arr,index+1);
+        int in = utilFunc(root->getLeft(),arr,index + 1);
         arr[index] = root->getData();
         return utilFunc(root->getRight(),arr,in);
     }
@@ -45,7 +45,7 @@ int main()
     bst.insert(22);
     bst.insert(20);
     bst.inOrder();
-    cout<<"Nearest :"<<bst.findNearest(4);
+    cout<<"Nearest :"<<bst.findNearest(19);
     
     return 0;
 }
