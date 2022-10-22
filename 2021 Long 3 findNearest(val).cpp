@@ -31,3 +31,21 @@ int findNearest(int val){
         arr[index] = root->getData();
         return utilFunc(root->getRight(),arr,in);
     }
+
+int main()
+{
+    BST bst;
+    bst.insert(9);
+    bst.insert(4);
+    bst.insert(17);
+    bst.insert(3);
+    bst.insert(6);                                                                                                                                
+    bst.insert(5);
+    bst.insert(7);
+    bst.insert(22);
+    bst.insert(20);
+    bst.inOrder();
+    cout<<"Nearest :"<<bst.findNearest(4);
+    
+    return 0;
+}
